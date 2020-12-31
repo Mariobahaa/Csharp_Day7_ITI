@@ -58,5 +58,14 @@ namespace Problem1
                 Console.WriteLine(fPtr(B));
             }
         }
+
+        public static void ProcessBooks(List<Book> bList
+       , Func<Book, String> fPtr)
+        {
+            foreach (Book B in bList)
+            {
+                Console.WriteLine(fPtr(B));
+            }
+        }
     }
 }
