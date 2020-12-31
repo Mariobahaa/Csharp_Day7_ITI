@@ -20,7 +20,7 @@ namespace Problem2
         
 
 
-        public Question(String h, decimal m, String ans){
+        public Question(String h, decimal m){
             Head = h;
             Marks = m;
           

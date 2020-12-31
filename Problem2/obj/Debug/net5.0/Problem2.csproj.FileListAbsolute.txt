@@ -1,0 +1,16 @@
+E:\My Programs\ITIC#\Day7\Problem2\bin\Debug\net5.0\Problem2.exe
+E:\My Programs\ITIC#\Day7\Problem2\bin\Debug\net5.0\Problem2.deps.json
+E:\My Programs\ITIC#\Day7\Problem2\bin\Debug\net5.0\Problem2.runtimeconfig.json
+E:\My Programs\ITIC#\Day7\Problem2\bin\Debug\net5.0\Problem2.runtimeconfig.dev.json
+E:\My Programs\ITIC#\Day7\Problem2\bin\Debug\net5.0\Problem2.dll
+E:\My Programs\ITIC#\Day7\Problem2\bin\Debug\net5.0\ref\Problem2.dll
+E:\My Programs\ITIC#\Day7\Problem2\bin\Debug\net5.0\Problem2.pdb
+E:\My Programs\ITIC#\Day7\Problem2\obj\Debug\net5.0\Problem2.csprojAssemblyReference.cache
+E:\My Programs\ITIC#\Day7\Problem2\obj\Debug\net5.0\Problem2.GeneratedMSBuildEditorConfig.editorconfig
+E:\My Programs\ITIC#\Day7\Problem2\obj\Debug\net5.0\Problem2.AssemblyInfoInputs.cache
+E:\My Programs\ITIC#\Day7\Problem2\obj\Debug\net5.0\Problem2.AssemblyInfo.cs
+E:\My Programs\ITIC#\Day7\Problem2\obj\Debug\net5.0\Problem2.csproj.CoreCompileInputs.cache
+E:\My Programs\ITIC#\Day7\Problem2\obj\Debug\net5.0\Problem2.dll
+E:\My Programs\ITIC#\Day7\Problem2\obj\Debug\net5.0\ref\Problem2.dll
+E:\My Programs\ITIC#\Day7\Problem2\obj\Debug\net5.0\Problem2.pdb
+E:\My Programs\ITIC#\Day7\Problem2\obj\Debug\net5.0\Problem2.genruntimeconfig.cache

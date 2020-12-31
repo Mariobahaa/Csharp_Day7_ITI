@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Problem1
+namespace Problem2
 {
     abstract class Exam 
     {

@@ -16,7 +16,7 @@ namespace Problem2
             {
                 Console.WriteLine($"Question {i+1}:");
                 Console.WriteLine($"{questions[i].Head} ({questions[i].Marks} marks)");
-                if (done) Console.WriteLine($"Model Answer: {questions[i].answer.Body}");
+                //if (done) Console.WriteLine($"Model Answer: {questions[i]..Body}");
                 Console.WriteLine("");
             }
 
