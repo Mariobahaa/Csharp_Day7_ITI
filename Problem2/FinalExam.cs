@@ -38,7 +38,7 @@ namespace Problem2
             else return 0;
         }
 
-        public FinalExam(float t, int n, QuestionList q, Subject s) : base(t, n, q, s)
+        public FinalExam(DateTime t, int n, QuestionList q, Subject s) : base(t, n, q, s)
         {
             ;
         }

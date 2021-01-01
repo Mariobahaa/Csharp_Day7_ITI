@@ -8,13 +8,11 @@ namespace Problem2
 {
     class ChooseAllQuestion : Question
     {
-        private AnswerList ChosenAnswers { get; set; }
+        
         public ChooseAllQuestion(String hd, decimal mrks,  AnswerList inans) : base(hd, mrks)
         {
-            for (int i = 0; i < inans.Answers.Count; i++)
-            {
-                Choices.Answers[i] = inans.Answers[i];
-            }
+            Choices = (AnswerList)inans.Clone();
+
         }
 
         public override void Solve()
@@ -49,7 +47,9 @@ namespace Problem2
                 }
             } while (!valid);
 
-          
+            Answered = true;
+
+
         }
     }
 }

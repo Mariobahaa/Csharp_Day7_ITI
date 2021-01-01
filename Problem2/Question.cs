@@ -15,9 +15,9 @@ namespace Problem2
 
         public bool Answered { get; set; } = false;
 
-        protected AnswerList Choices { get; }
+        protected AnswerList Choices { get; set; }
 
-        
+        protected AnswerList ChosenAnswers { get; set; }
 
 
         public Question(String h, decimal m){

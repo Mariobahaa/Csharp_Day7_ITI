@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Problem2
 {
-    class AnswerList
+    class AnswerList : ICloneable
     {
         private List<Answer> answers;
 
@@ -21,6 +21,16 @@ namespace Problem2
         public void addAnswer(Answer ans)
         {
             answers.Add(ans);
+        }
+
+        public object Clone()
+        {
+            AnswerList Choices = new AnswerList();
+            for (int i = 0; i < answers?.Count; i++)
+            {
+                Choices.addAnswer(answers[i]);
+            }
+            return Choices;
         }
 
         public override string ToString()

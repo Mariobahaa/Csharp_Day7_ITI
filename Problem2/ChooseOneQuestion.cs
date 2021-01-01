@@ -8,14 +8,11 @@ namespace Problem2
 {
     class ChooseOneQuestion : Question
     {
-        private Answer ChosenAnswer { get; set; }
+        //private Answer ChosenAnswer { get; set; }
 
         public ChooseOneQuestion(String hd, decimal mrks, AnswerList inans) : base(hd, mrks)
         {
-            for(int i=0;i<inans.Answers.Count;i++)
-            {
-                Choices.Answers[i] = inans.Answers[i];
-            }
+            Choices = (AnswerList)inans.Clone();
         }
 
         public override void Solve()
@@ -32,7 +29,7 @@ namespace Problem2
                 parsed = int.TryParse(Console.ReadLine(), out x);
             } while (!parsed && (x >= 1 || x <= Choices.Answers.Count));
 
-            ChosenAnswer = Choices.Answers[x - 1];
+            ChosenAnswers.addAnswer(Choices.Answers[x - 1]);
         }
     }
 }

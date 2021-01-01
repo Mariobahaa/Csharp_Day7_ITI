@@ -8,7 +8,8 @@ namespace Problem2
 {
     abstract class Exam 
     {
-        public float Time { get; }
+        protected Dictionary<Question,AnswerList> ModelAnswer;
+        public DateTime Time { get; }
 
         public int numOfQuestions { get; }
 
@@ -19,7 +20,7 @@ namespace Problem2
 
  
 
-        public Exam(float t, int n, QuestionList q, Subject s)
+        public Exam(DateTime t, int n, QuestionList q, Subject s)
         {
             Time = t;
             numOfQuestions = n;

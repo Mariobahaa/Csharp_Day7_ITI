@@ -8,7 +8,7 @@ namespace Problem2
 {
     class TrueFalseQuestion: Question
     {
-        private Answer ChosenAnswer { get; set; }
+        //private Answer ChosenAnswer { get; set; }
 
         public TrueFalseQuestion(String hd, decimal mrks): base(hd, mrks)
         {
@@ -30,7 +30,9 @@ namespace Problem2
                 parsed = int.TryParse(Console.ReadLine(), out x);
             } while (!parsed && (x!=1 || x!=2));
 
-            ChosenAnswer = Choices.Answers[x-1];
+            if(ChosenAnswers.Answers.Count == 0) 
+            ChosenAnswers.addAnswer(Choices.Answers[x-1]);
+            Answered= true;
         }
     }
 }
