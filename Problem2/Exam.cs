@@ -12,21 +12,21 @@ namespace Problem2
 
         public int numOfQuestions { get; }
 
-        protected Question[] questions;
+        protected QuestionList questions;
 
         public Subject Subject { get; set; }
         abstract public void showExam();
 
  
 
-        public Exam(float t, int n, Question[] q, Subject s)
+        public Exam(float t, int n, QuestionList q, Subject s)
         {
             Time = t;
             numOfQuestions = n;
-            questions = new Question[n];
+            questions = new QuestionList();
             for(int i=0;i<n;i++)
             {
-                questions[i] = q[i];
+                questions.Add(q[i]);
             }
             Subject = s;
         }

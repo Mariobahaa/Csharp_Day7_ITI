@@ -24,8 +24,8 @@ namespace Problem2
 
         public object Clone()
         {
-            Question[] q = new Question[this.numOfQuestions];
-            for (int i = 0; i < this.numOfQuestions; i++) q[i] = questions[i];
+            QuestionList q = new QuestionList();
+            for (int i = 0; i < this.numOfQuestions; i++) q.Add(questions[i]);
             return new PracticeExam(this.Time, this.numOfQuestions, q, this.Subject);
 
         }
@@ -37,7 +37,7 @@ namespace Problem2
             else return 0;
         }
 
-        public PracticeExam(float t, int n, Question[] q, Subject s) : base(t, n,  q,s )
+        public PracticeExam(float t, int n, QuestionList q, Subject s) : base(t, n,  q,s )
         {
             ;
         }
