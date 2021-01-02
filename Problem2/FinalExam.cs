@@ -16,7 +16,7 @@ namespace Problem2
             for (int i = 0; i < numOfQuestions; i++)
             {
                 Console.WriteLine($"Question {i+1}:");
-                Console.WriteLine($"{questions[i].Head} ({questions[i].Marks} marks)");
+                Console.WriteLine($"{Questions[i].Head} ({Questions[i].Marks} marks)");
                
                 Console.WriteLine("");
             }
@@ -26,7 +26,7 @@ namespace Problem2
         public object Clone()
         {
             QuestionList q = new QuestionList();
-            for (int i = 0; i < this.numOfQuestions; i++) q.Add(questions[i]);
+            for (int i = 0; i < this.numOfQuestions; i++) q.Add(Questions[i]);
             return new FinalExam(this.Time, this.numOfQuestions, q, this.Subject);
             
         }
