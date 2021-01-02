@@ -10,11 +10,12 @@ namespace Problem2
     {
         //private Answer ChosenAnswer { get; set; }
 
-        public TrueFalseQuestion(String hd, decimal mrks): base(hd, mrks)
+        public TrueFalseQuestion(String hd, decimal mrks, AnswerList crct): base(hd, mrks,crct)
         {
             Choices.addAnswer(new Answer("True"));
             Choices.addAnswer(new Answer("False"));
         }
+
         
         public override void Solve()
         {

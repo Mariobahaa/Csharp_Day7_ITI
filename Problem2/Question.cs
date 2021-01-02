@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Problem2
 {
-    abstract class Question
+    abstract class Question 
     {
         public String Head { get; set; }
 
@@ -17,13 +17,14 @@ namespace Problem2
 
         protected AnswerList Choices { get; set; }
 
-        protected AnswerList ChosenAnswers { get; set; }
+        public AnswerList ChosenAnswers { get; set; }
 
+        public AnswerList CorrectAnswer { get;  }
 
-        public Question(String h, decimal m){
+        public Question(String h, decimal m, AnswerList crct){
             Head = h;
             Marks = m;
-          
+            CorrectAnswer = (AnswerList) crct.Clone();
         }
 
         public override string ToString()

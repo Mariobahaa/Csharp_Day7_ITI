@@ -10,7 +10,8 @@ namespace Problem2
     {
         //private Answer ChosenAnswer { get; set; }
 
-        public ChooseOneQuestion(String hd, decimal mrks, AnswerList inans) : base(hd, mrks)
+        public ChooseOneQuestion(String hd, decimal mrks, AnswerList inans, AnswerList crct) 
+        : base(hd, mrks,crct)
         {
             Choices = (AnswerList)inans.Clone();
         }
@@ -30,6 +31,7 @@ namespace Problem2
             } while (!parsed && (x >= 1 || x <= Choices.Answers.Count));
 
             ChosenAnswers.addAnswer(Choices.Answers[x - 1]);
+            Answered = true;
         }
     }
 }

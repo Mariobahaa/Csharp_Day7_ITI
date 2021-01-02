@@ -8,7 +8,7 @@ namespace Problem2
 {
     abstract class Exam 
     {
-        protected Dictionary<Question,AnswerList> ModelAnswer;
+        protected Dictionary<Question,AnswerList> modelAnswer = new Dictionary<Question, AnswerList>();
         public DateTime Time { get; }
 
         public int numOfQuestions { get; }
@@ -18,9 +18,19 @@ namespace Problem2
         public Subject Subject { get; set; }
         abstract public void showExam();
 
- 
+        public decimal Correct() {
+            decimal mark = 0;
+            foreach(var item in modelAnswer )
+            {
+                if(item.Value == item.Key.ChosenAnswers)
+                {
+                    mark += item.Key.Marks;
+                }
+            }
+            return mark;
+        }
 
-        public Exam(DateTime t, int n, QuestionList q, Subject s)
+        public Exam(DateTime t, int n, QuestionList q,  Subject s)
         {
             Time = t;
             numOfQuestions = n;
@@ -28,7 +38,9 @@ namespace Problem2
             for(int i=0;i<n;i++)
             {
                 questions.Add(q[i]);
+                modelAnswer[q[i]] = q[i].CorrectAnswer; 
             }
+    
             Subject = s;
         }
 
