@@ -13,7 +13,7 @@ namespace Problem2
 
         public int numOfQuestions { get; }
 
-        protected QuestionList questions;
+        public QuestionList Questions { get; }
 
         public Subject Subject { get; set; }
         abstract public void showExam();
@@ -34,10 +34,10 @@ namespace Problem2
         {
             Time = t;
             numOfQuestions = n;
-            questions = new QuestionList();
+            Questions = new QuestionList();
             for(int i=0;i<n;i++)
             {
-                questions.Add(q[i]);
+                Questions.Add(q[i]);
                 modelAnswer[q[i]] = q[i].CorrectAnswer; 
             }
     
@@ -49,7 +49,7 @@ namespace Problem2
             StringBuilder s = new StringBuilder("", 500);
             for (int i = 0; i < numOfQuestions; i++)
             {
-                s.Append($"Question { i + 1}:\n {questions[i].Head} ({questions[i].Marks} marks)\n");
+                s.Append($"Question { i + 1}:\n {Questions[i].Head} ({Questions[i].Marks} marks)\n");
             }
             return s.ToString();
         }

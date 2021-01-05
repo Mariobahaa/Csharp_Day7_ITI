@@ -10,8 +10,8 @@ namespace Problem2
     {
         //private Answer ChosenAnswer { get; set; }
 
-        public ChooseOneQuestion(String hd, decimal mrks, AnswerList inans, AnswerList crct) 
-        : base(hd, mrks,crct)
+        public ChooseOneQuestion(String hd, decimal mrks, AnswerList inans, AnswerList crct, AnswerList choices) 
+        : base(hd, mrks,crct,choices)
         {
             Choices = (AnswerList)inans.Clone();
         }

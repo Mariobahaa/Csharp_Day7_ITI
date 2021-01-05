@@ -10,8 +10,9 @@ namespace Problem2
     {
         //private Answer ChosenAnswer { get; set; }
 
-        public TrueFalseQuestion(String hd, decimal mrks, AnswerList crct): base(hd, mrks,crct)
+        public TrueFalseQuestion(String hd, decimal mrks, AnswerList crct): base(hd, mrks,crct,new AnswerList())
         {
+
             Choices.addAnswer(new Answer("True"));
             Choices.addAnswer(new Answer("False"));
         }
