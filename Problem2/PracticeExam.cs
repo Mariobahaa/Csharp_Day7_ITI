@@ -15,11 +15,14 @@ namespace Problem2
             int i = 1;
             foreach (var item in modelAnswer)
             {
-                Console.WriteLine($"Question {i}:");
-                Console.WriteLine($"Question { i}:\n { item.Key.ToString()}\n");
+                
+                Console.WriteLine($"Question { i}:\n{ item.Key.ToString()}\n");
+                for (int j = 1; j <= item.Key.Choices.Answers.Count; j++)
+                    Console.WriteLine($"{j}. {item.Key.Choices.Answers[j-1]}");
                 checkDone();
                 if (done) Console.WriteLine($"Model Answer: {item.Value.ToString()}");
                 Console.WriteLine("");
+                i++;
             }
 
         }

@@ -10,10 +10,10 @@ namespace Problem2
     {
         //private Answer ChosenAnswer { get; set; }
         //Override to String (abstract)
-        public ChooseOneQuestion(String hd, decimal mrks, AnswerList inans, AnswerList choices) 
-        : base(hd, mrks,choices)
+        public ChooseOneQuestion(String hd, decimal mrks, AnswerList choices)
+        : base(hd, mrks, (AnswerList)choices?.Clone() ?? new AnswerList())
         {
-            Choices = (AnswerList)inans.Clone();
+            ;
         }
 
         public void Solve(int ansNum)

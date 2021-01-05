@@ -16,7 +16,7 @@ namespace Problem2
             base.Add(Q);
             try
             {
-                using (StreamWriter sw = File.AppendText("QuestionLog.txt"))
+                using (StreamWriter sw = File.AppendText("E:\\My Programs\\ITIC#\\Day7\\Problem2\\QuestionLog.txt"))
                 {
                     sw.WriteLine(Q.ToString());
                 }

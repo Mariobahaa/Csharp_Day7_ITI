@@ -9,10 +9,10 @@ namespace Problem2
     class ChooseAllQuestion : Question
     {
         
-        public ChooseAllQuestion(String hd, decimal mrks,  AnswerList inans, AnswerList choices) : base(hd, mrks, choices)
+        public ChooseAllQuestion(String hd, decimal mrks, AnswerList choices) 
+        : base(hd, mrks, (AnswerList)choices?.Clone()??new AnswerList())
         {
-            Choices = (AnswerList)inans.Clone();
-
+            ;
         }
 
         public void Solve(List<int> ansNum)

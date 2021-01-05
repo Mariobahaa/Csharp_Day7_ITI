@@ -15,7 +15,7 @@ namespace Problem2
 
         public bool Answered { get; set; } = false;
 
-        protected AnswerList Choices { get; set; }
+        public AnswerList Choices { get; set; }
 
         public AnswerList ChosenAnswers { get; set; }
 

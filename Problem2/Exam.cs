@@ -53,6 +53,8 @@ namespace Problem2
             {
                 s.Append($"Question { i}:\n {item.Key.ToString()}\n\n");
                 i++;
+                for (int j = 1; j <= item.Key.Choices.Answers.Count; j++)
+                    s.Append($"{j}. {item.Key.Choices.Answers[j-1]}\n");
             }
             return s.ToString();
         }
