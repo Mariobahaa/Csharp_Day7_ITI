@@ -19,5 +19,14 @@ namespace Problem2
         {
             return Body;
         }
+
+        public override bool Equals(object obj)
+        {
+            Answer ans = obj as Answer;
+            if (ans == null) return false;
+            if (ans?.GetHashCode() == this?.GetHashCode()) return true;
+            if (ans?.Body == Body) return true;
+            return false;
+        }
     }
 }

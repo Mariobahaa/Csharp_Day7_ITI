@@ -33,6 +33,16 @@ namespace Problem2
             return $"{Head} ({Marks} marks)";
         }
 
+        public override bool Equals(object obj)
+        {
+            Question question = obj as Question;
+            if (question == null) return false;
+            if (question?.GetHashCode() == this?.GetHashCode()) return true;
+            if (question?.Head == Head) return true;
+            return false;
+
+        }
+
         public abstract void Solve();
     }
 }

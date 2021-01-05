@@ -54,7 +54,7 @@ namespace Problem2
 
                 for (int i = 0; i < this.Answers.Count; i++)
                 {
-                    if (exam.Answers[i] != this.Answers[i]) return false;
+                    if (!exam.Answers[i].Equals(this.Answers[i])) return false;
                 }
 
                 return true;
