@@ -52,6 +52,11 @@ namespace Problem2
             {
                 if (ChosenAnswers.Answers.Count == 0)
                     ChosenAnswers.addAnswer(Choices.Answers[ansNum - 1]);
+                else if (ChosenAnswers.Answers.Count > 0 && this.Type() == 3 
+                    && ChosenAnswers.Answers.Count<Choices.Answers.Count)
+                {
+                    ChosenAnswers.addAnswer(Choices.Answers[ansNum - 1]);
+                }
                 Answered = true;
             }
         }
