@@ -42,5 +42,24 @@ namespace Problem2
             }
             return str.ToString();
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            if (obj is AnswerList exam)
+            {
+                if (exam.Answers.Count != this?.Answers.Count) return false;
+
+                if (this.GetHashCode() == exam?.GetHashCode()) return true;
+
+                for (int i = 0; i < this.Answers.Count; i++)
+                {
+                    if (exam.Answers[i] != this.Answers[i]) return false;
+                }
+
+                return true;
+            }
+            return false;
+        }
     }
 }

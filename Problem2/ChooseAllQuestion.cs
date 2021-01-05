@@ -9,7 +9,7 @@ namespace Problem2
     class ChooseAllQuestion : Question
     {
         
-        public ChooseAllQuestion(String hd, decimal mrks,  AnswerList inans, AnswerList crct , AnswerList choices) : base(hd, mrks,crct, choices)
+        public ChooseAllQuestion(String hd, decimal mrks,  AnswerList inans, AnswerList choices) : base(hd, mrks, choices)
         {
             Choices = (AnswerList)inans.Clone();
 

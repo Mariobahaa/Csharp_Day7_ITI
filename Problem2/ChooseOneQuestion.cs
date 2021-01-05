@@ -9,9 +9,9 @@ namespace Problem2
     class ChooseOneQuestion : Question
     {
         //private Answer ChosenAnswer { get; set; }
-
-        public ChooseOneQuestion(String hd, decimal mrks, AnswerList inans, AnswerList crct, AnswerList choices) 
-        : base(hd, mrks,crct,choices)
+        //Override to String (abstract)
+        public ChooseOneQuestion(String hd, decimal mrks, AnswerList inans, AnswerList choices) 
+        : base(hd, mrks,choices)
         {
             Choices = (AnswerList)inans.Clone();
         }

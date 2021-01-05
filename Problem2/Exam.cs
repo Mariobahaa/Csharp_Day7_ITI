@@ -13,7 +13,7 @@ namespace Problem2
 
         public int numOfQuestions { get; }
 
-        public QuestionList Questions { get; }
+        //public QuestionList Questions { get; }
 
         public Subject Subject { get; set; }
         abstract public void showExam();
@@ -22,7 +22,7 @@ namespace Problem2
             decimal mark = 0;
             foreach(var item in modelAnswer )
             {
-                if(item.Value == item.Key.ChosenAnswers)
+                if(item.Value.Equals(item.Key.ChosenAnswers))
                 {
                     mark += item.Key.Marks;
                 }
@@ -30,15 +30,15 @@ namespace Problem2
             return mark;
         }
 
-        public Exam(DateTime t, int n, QuestionList q,  Subject s)
+        public Exam(DateTime t, int n, QuestionList q, List<AnswerList> a, Subject s)
         {
             Time = t;
             numOfQuestions = n;
-            Questions = new QuestionList();
+            //Questions = new QuestionList();
             for(int i=0;i<n;i++)
             {
-                Questions.Add(q[i]);
-                modelAnswer[q[i]] = q[i].CorrectAnswer; 
+                //Questions.Add(q[i]);
+                modelAnswer[q[i]] = a[i]; 
             }
     
             Subject = s;
@@ -47,11 +47,15 @@ namespace Problem2
         public override string ToString()
         {
             StringBuilder s = new StringBuilder("", 500);
-            for (int i = 0; i < numOfQuestions; i++)
+            s.Append($"Subject: {Subject.ToString()}\t\ttime: {Time.ToString()}");
+            int i=1;
+            foreach( var item in modelAnswer)
             {
-                s.Append($"Question { i + 1}:\n {Questions[i].Head} ({Questions[i].Marks} marks)\n");
+                s.Append($"Question { i}:\n {item.Key.ToString()}\n\n");
+                i++;
             }
             return s.ToString();
         }
+
     }
 }

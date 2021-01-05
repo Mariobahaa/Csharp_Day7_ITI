@@ -12,12 +12,13 @@ namespace Problem2
 
         public override void showExam()
         {
-            for (int i = 0; i < numOfQuestions; i++)
+            int i = 1;
+            foreach (var item in modelAnswer)
             {
-                Console.WriteLine($"Question {i+1}:");
-                Console.WriteLine($"{Questions[i].Head} ({Questions[i].Marks} marks)");
+                Console.WriteLine($"Question {i}:");
+                Console.WriteLine($"Question { i}:\n { item.Key.ToString()}\n");
                 checkDone();
-                if (done) Console.WriteLine($"Model Answer: {modelAnswer[Questions[i]]}");
+                if (done) Console.WriteLine($"Model Answer: {item.Value.ToString()}");
                 Console.WriteLine("");
             }
 
@@ -26,16 +27,21 @@ namespace Problem2
         internal void checkDone()
         {
             done = true;
-            foreach(Question q in Questions)
+            foreach (var item in modelAnswer)
             {
-                if (!q.Answered) done = false;
+                if (!item.Key.Answered) done = false;
             }
         }
         public object Clone()
         {
+            List<AnswerList> a = new List<AnswerList>();
             QuestionList q = new QuestionList();
-            for (int i = 0; i < this.numOfQuestions; i++) q.Add(Questions[i]);
-            return new PracticeExam(this.Time, this.numOfQuestions, q, this.Subject);
+            foreach (var item in modelAnswer)
+            {
+                q.Add(item.Key);
+                a.Add(item.Value);
+            }
+            return new FinalExam(this.Time, this.numOfQuestions, q, a, this.Subject);
 
         }
 
@@ -46,7 +52,7 @@ namespace Problem2
             else return 0;
         }
 
-        public PracticeExam(DateTime t, int n, QuestionList q, Subject s) : base(t, n,  q,s )
+        public PracticeExam(DateTime t, int n, QuestionList q, List<AnswerList> a, Subject s) : base(t, n, q, a, s )
         {
             ;
         }

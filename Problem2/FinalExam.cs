@@ -13,21 +13,20 @@ namespace Problem2
 
         public override void showExam()
         {
-            for (int i = 0; i < numOfQuestions; i++)
-            {
-                Console.WriteLine($"Question {i+1}:");
-                Console.WriteLine($"{Questions[i].Head} ({Questions[i].Marks} marks)");
-               
-                Console.WriteLine("");
-            }
+            Console.WriteLine(this.ToString());
 
         }
 
         public object Clone()
         {
+            List<AnswerList> a = new List<AnswerList>();
             QuestionList q = new QuestionList();
-            for (int i = 0; i < this.numOfQuestions; i++) q.Add(Questions[i]);
-            return new FinalExam(this.Time, this.numOfQuestions, q, this.Subject);
+            foreach (var item in modelAnswer) 
+            { 
+                q.Add(item.Key);
+                a.Add(item.Value);
+            }
+            return new FinalExam(this.Time, this.numOfQuestions, q,a, this.Subject);
             
         }
 
@@ -38,7 +37,7 @@ namespace Problem2
             else return 0;
         }
 
-        public FinalExam(DateTime t, int n, QuestionList q, Subject s) : base(t, n, q, s)
+        public FinalExam(DateTime t, int n, QuestionList q, List<AnswerList> a, Subject s) : base(t, n, q,a, s)
         {
             ;
         }

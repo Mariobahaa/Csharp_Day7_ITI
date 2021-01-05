@@ -19,12 +19,12 @@ namespace Problem2
 
         public AnswerList ChosenAnswers { get; set; }
 
-        public AnswerList CorrectAnswer { get;  }//
+        //public AnswerList CorrectAnswer { get;  }//
 
-        public Question(String h, decimal m, AnswerList crct, AnswerList choices){
+        public Question(String h, decimal m, AnswerList choices){
             Head = h;
             Marks = m;
-            CorrectAnswer = (AnswerList) crct.Clone();
+            //CorrectAnswer = (AnswerList) crct.Clone();
             Choices = (AnswerList)choices.Clone();
         }
 
