@@ -25,6 +25,7 @@ namespace Problem2
             Head = h;
             Marks = m;
             //CorrectAnswer = (AnswerList) crct.Clone();
+            ChosenAnswers = new AnswerList();
             Choices = (AnswerList)choices.Clone();
         }
 
@@ -43,6 +44,6 @@ namespace Problem2
 
         }
 
-        public abstract void Solve();
+        //public abstract void Solve();
     }
 }

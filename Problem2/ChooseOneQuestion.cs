@@ -16,7 +16,17 @@ namespace Problem2
             Choices = (AnswerList)inans.Clone();
         }
 
-        public override void Solve()
+        public void Solve(int ansNum)
+        {
+            if (ansNum >= 0 && ansNum < Choices.Answers.Count)
+            {
+                if (ChosenAnswers.Answers.Count == 0)
+                    ChosenAnswers.addAnswer(Choices.Answers[ansNum - 1]);
+                Answered = true;
+            }
+        }
+
+        /*public override void Solve()
         {
             Console.WriteLine("Choose One Answer:");
             Console.WriteLine(Head.ToString());
@@ -32,6 +42,6 @@ namespace Problem2
 
             ChosenAnswers.addAnswer(Choices.Answers[x - 1]);
             Answered = true;
-        }
+        }*/
     }
 }

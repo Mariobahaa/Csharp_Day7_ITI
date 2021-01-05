@@ -15,7 +15,25 @@ namespace Problem2
 
         }
 
-        public override void Solve()
+        public void Solve(List<int> ansNum)
+        {
+            if (ansNum != null && ansNum.Count > 0)
+            {
+                for (int i = 0; i < ansNum.Count; i++)
+                {
+                    if (ansNum[i] >= 0 && ansNum[i] < Choices.Answers.Count)
+                    {
+                        if (ChosenAnswers.Answers.Count == 0)
+                            ChosenAnswers.addAnswer(Choices.Answers[ansNum[i] - 1]);
+                       
+                    }
+                }
+                Answered = true;
+            }
+        }
+
+
+        /*public override void Solve()
         {
             Console.WriteLine("Choose All that Apply:");
             Console.WriteLine(Head.ToString());
@@ -50,6 +68,6 @@ namespace Problem2
             Answered = true;
 
 
-        }
+        }*/
     }
 }
