@@ -136,7 +136,9 @@ namespace Problem2
             }
 
             Console.WriteLine("You Scored: ");
-            Console.WriteLine(practiceExam.Correct());
+            Console.WriteLine($"{ practiceExam.Correct()}/{practiceExam.TotalGrade}");
+
+            practiceExam.showExam();
         }
     }
 }

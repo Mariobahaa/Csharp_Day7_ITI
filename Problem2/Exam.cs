@@ -13,6 +13,8 @@ namespace Problem2
 
         public int numOfQuestions { get; }
 
+        public decimal TotalGrade { get; }
+
         //public QuestionList Questions { get; }
 
         public Dictionary<Question, AnswerList> getModel()
@@ -39,11 +41,13 @@ namespace Problem2
         {
             Time = t;
             numOfQuestions = n;
+            TotalGrade = 0;
             //Questions = new QuestionList();
             for(int i=0;i<n;i++)
             {
                 //Questions.Add(q[i]);
-                modelAnswer[q[i]] = a[i]; 
+                modelAnswer[q[i]] = a[i];
+                TotalGrade += q[i].Marks;
             }
     
             Subject = s;
