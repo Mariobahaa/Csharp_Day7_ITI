@@ -82,7 +82,9 @@ namespace Problem2
                     do
                     {
                         parsed = int.TryParse(Console.ReadLine(), out x);
-                    } while (!parsed && (x >= 1 || x <= item.Key.Choices.Answers.Count));
+                    } while (!parsed && (x < 1 || x > item.Key.Choices.Answers.Count));
+
+                    item.Key.Solve(x);
                 }
                 else if (item.Key.Type() == 3)
                 {
@@ -105,17 +107,23 @@ namespace Problem2
                             for (int i = 0; i < Choice.Length && valid; i++)
                             {
                                 valid = int.TryParse(Choice[i], out x);
-                                if (x >= 0 || x >= item.Key.Choices.Answers.Count)
+                                if (x <= 0 || x > item.Key.Choices.Answers.Count)
                                 {
                                     valid = false;
                                 }
                                 else
                                 {
-                                    bool found = false;
-                                    foreach (var elem in Choice[i])
-                                        if (elem.Equals(item.Key.ChosenAnswers.Answers[x - 1])) found = true;
-                                    if (!found)
+                                    if (item.Key.ChosenAnswers.Answers.Count == 0)
                                         item.Key.Solve(x);
+                                    else
+                                    {
+                                        bool found = false;
+                                        foreach (var elem in item.Key.ChosenAnswers.Answers)
+
+                                            if (elem.Equals(item.Key.Choices.Answers[x-1])) found = true;
+                                        if (!found)
+                                            item.Key.Solve(x);
+                                    }
                                 }
                             }
                         }
