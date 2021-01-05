@@ -50,7 +50,7 @@ namespace Problem2
             {
                 if (exam.Answers.Count != this?.Answers.Count) return false;
 
-                if (this.GetHashCode() == exam?.GetHashCode()) return true;
+                //if (this.GetHashCode() == exam?.GetHashCode()) return true;
 
                 for (int i = 0; i < this.Answers.Count; i++)
                 {

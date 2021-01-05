@@ -26,6 +26,12 @@ namespace Problem2
                 Answered = true;
             }
         }
+
+        public override int Type()
+        {
+            return 1;
+        }
+
         /*public override void Solve()
         {
             Console.WriteLine("Choose True or False:");

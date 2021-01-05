@@ -26,6 +26,10 @@ namespace Problem2
             }
         }
 
+        public override int Type()
+        {
+            return 2;
+        }
         /*public override void Solve()
         {
             Console.WriteLine("Choose One Answer:");

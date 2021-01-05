@@ -23,7 +23,7 @@ namespace Problem2
             AnswerList C3 = new AnswerList();
             C3.addAnswer(A34); C3.addAnswer(A33);
             C3.addAnswer(A31); C3.addAnswer(A32);
-            ChooseAllQuestion Q3 = new ChooseAllQuestion("Which Countries are in Africa?", 5, C3);
+            ChooseAllQuestion Q3 = new ChooseAllQuestion("Which Countries are in Africa?", 6, C3);
 
             QuestionList QList = new QuestionList();
             QList.Add(Q1);
@@ -52,6 +52,26 @@ namespace Problem2
 
             practiceExam.showExam();
             
+            foreach (var item in practiceExam.getModel())
+            {
+                if (item.Key.Type() == 1)
+                {
+                    item.Key.ChosenAnswers.addAnswer(new Answer("False"));
+                }
+                else if (item.Key.Type() == 2)
+                {
+                    item.Key.ChosenAnswers.addAnswer(A11);
+                }
+                else if (item.Key.Type() == 3)
+                {
+                    item.Key.ChosenAnswers.addAnswer(A32);
+                    item.Key.ChosenAnswers.addAnswer(new Answer("Ghana"));
+                }
+                    
+                
+            }
+
+            Console.WriteLine(practiceExam.Correct());
         }
     }
 }

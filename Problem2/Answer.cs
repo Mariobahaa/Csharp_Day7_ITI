@@ -24,7 +24,7 @@ namespace Problem2
         {
             Answer ans = obj as Answer;
             if (ans == null) return false;
-            if (ans?.GetHashCode() == this?.GetHashCode()) return true;
+            //if (ans?.GetHashCode() == this?.GetHashCode()) return true;
             if (ans?.Body == Body) return true;
             return false;
         }

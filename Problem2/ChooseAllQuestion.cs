@@ -32,6 +32,11 @@ namespace Problem2
             }
         }
 
+        public override int Type()
+        {
+            return 3;
+        }
+
 
         /*public override void Solve()
         {

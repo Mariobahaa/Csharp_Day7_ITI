@@ -15,6 +15,11 @@ namespace Problem2
 
         //public QuestionList Questions { get; }
 
+        public Dictionary<Question, AnswerList> getModel()
+        {
+            
+            return modelAnswer;
+        }
         public Subject Subject { get; set; }
         abstract public void showExam();
 

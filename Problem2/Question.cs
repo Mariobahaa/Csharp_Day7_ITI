@@ -38,12 +38,14 @@ namespace Problem2
         {
             Question question = obj as Question;
             if (question == null) return false;
-            if (question?.GetHashCode() == this?.GetHashCode()) return true;
+            //if (question?.GetHashCode() == this?.GetHashCode()) return true;
             if (question?.Head == Head) return true;
             return false;
 
         }
 
+        public abstract int Type();
+        
         //public abstract void Solve();
     }
 }
