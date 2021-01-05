@@ -31,7 +31,7 @@ namespace Problem2
 
         public override string ToString()
         {
-            return $"{Head} ({Marks} marks)";
+            return $"{Head} ({Marks} marks)\n";
         }
 
         public override bool Equals(object obj)
@@ -45,7 +45,15 @@ namespace Problem2
         }
 
         public abstract int Type();
-        
-        //public abstract void Solve();
+
+        public void Solve(int ansNum)
+        {
+            if (ansNum >= 0 && ansNum < Choices.Answers.Count)
+            {
+                if (ChosenAnswers.Answers.Count == 0)
+                    ChosenAnswers.addAnswer(Choices.Answers[ansNum - 1]);
+                Answered = true;
+            }
+        }
     }
 }

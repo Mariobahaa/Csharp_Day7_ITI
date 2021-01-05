@@ -38,7 +38,7 @@ namespace Problem2
             StringBuilder str = new StringBuilder("", 100);
             for(int i=0;i<answers.Count;i++)
             {
-                str.Append($"{i + 1}. {answers[i]}");
+                str.Append($"{i + 1}. {answers[i]}\n");
             }
             return str.ToString();
         }
@@ -51,12 +51,15 @@ namespace Problem2
                 if (exam.Answers.Count != this?.Answers.Count) return false;
 
                 //if (this.GetHashCode() == exam?.GetHashCode()) return true;
-
+                int cnt = 0;
                 for (int i = 0; i < this.Answers.Count; i++)
                 {
-                    if (!exam.Answers[i].Equals(this.Answers[i])) return false;
+                    for (int j = 0; j < exam.Answers.Count; j++)
+                        if (exam.Answers[i].Equals(this.Answers[j]))
+                            cnt++;
                 }
 
+                if (cnt == this?.Answers?.Count)
                 return true;
             }
             return false;

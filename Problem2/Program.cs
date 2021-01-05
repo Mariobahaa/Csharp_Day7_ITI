@@ -56,21 +56,78 @@ namespace Problem2
             {
                 if (item.Key.Type() == 1)
                 {
-                    item.Key.ChosenAnswers.addAnswer(new Answer("False"));
+                    Console.WriteLine("Choose True or False:");
+                    Console.WriteLine(item.Key.Head.ToString());
+                    Console.WriteLine("");
+                    Console.WriteLine(item.Key.Choices.ToString());
+
+                    int x = 0;
+                    bool parsed;
+                    do
+                    {
+                        parsed = int.TryParse(Console.ReadLine(), out x);
+                    } while (!parsed && (x != 1 || x != 2));
+                    item.Key.Solve(x);
+                    //item.Key.ChosenAnswers.addAnswer(new Answer("False"));
                 }
                 else if (item.Key.Type() == 2)
                 {
-                    item.Key.ChosenAnswers.addAnswer(A11);
+                    Console.WriteLine("Choose One Answer:");
+                    Console.WriteLine(item.Key.Head.ToString());
+                    Console.WriteLine("");
+                    Console.WriteLine(item.Key.Choices.ToString());
+
+                    int x = 0;
+                    bool parsed;
+                    do
+                    {
+                        parsed = int.TryParse(Console.ReadLine(), out x);
+                    } while (!parsed && (x >= 1 || x <= item.Key.Choices.Answers.Count));
                 }
                 else if (item.Key.Type() == 3)
                 {
-                    item.Key.ChosenAnswers.addAnswer(A32);
-                    item.Key.ChosenAnswers.addAnswer(new Answer("Ghana"));
+                    Console.WriteLine("Choose All that Apply:");
+                    Console.WriteLine(item.Key.Head.ToString());
+                    Console.WriteLine("");
+                    Console.WriteLine(item.Key.Choices.ToString());
+
+
+                    int x = 0;
+                    bool valid = true;
+                    do
+                    {
+                        String str;
+                        str = Console.ReadLine();
+                        String[] Choice = str?.Split();
+                        if (Choice.Length > item.Key.Choices.Answers.Count) valid = false;
+                        else
+                        {
+                            for (int i = 0; i < Choice.Length && valid; i++)
+                            {
+                                valid = int.TryParse(Choice[i], out x);
+                                if (x >= 0 || x >= item.Key.Choices.Answers.Count)
+                                {
+                                    valid = false;
+                                }
+                                else
+                                {
+                                    bool found = false;
+                                    foreach (var elem in Choice[i])
+                                        if (elem.Equals(item.Key.ChosenAnswers.Answers[x - 1])) found = true;
+                                    if (!found)
+                                        item.Key.Solve(x);
+                                }
+                            }
+                        }
+                    } while (!valid);
+
+                   
+                    //item.Key.ChosenAnswers.addAnswer(A32);
+                    //item.Key.ChosenAnswers.addAnswer(new Answer("Ghana"));
                 }
-                    
-                
             }
 
+            Console.WriteLine("You Scored: ");
             Console.WriteLine(practiceExam.Correct());
         }
     }

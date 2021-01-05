@@ -17,15 +17,7 @@ namespace Problem2
             Choices.addAnswer(new Answer("False"));
         }
 
-        public void Solve(int ansNum)
-        {
-            if (ansNum >= 0 && ansNum < Choices.Answers.Count)
-            {
-                if (ChosenAnswers.Answers.Count == 0)
-                    ChosenAnswers.addAnswer(Choices.Answers[ansNum - 1]);
-                Answered = true;
-            }
-        }
+     
 
         public override int Type()
         {
